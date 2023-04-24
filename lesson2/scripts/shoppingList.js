@@ -41,12 +41,12 @@ const disablePlusOrMinus = (event) => {
 
 const createPlusButton = () => {
     
-    plusBtn = document.createElement("button")
+    const plusBtn = document.createElement("button")
     plusBtn.setAttribute("type", "button")
     plusBtn.setAttribute("class", "btn btn-success btn-number me-1")
     plusBtn.setAttribute("data-type", "plus")
     plusBtn.setAttribute("data-field", "quant[1]")
-    plusSign = document.createElement("span")
+    const plusSign = document.createElement("span")
     plusSign.innerHTML = "+"
     plusBtn.appendChild(plusSign)
 
@@ -77,12 +77,12 @@ const createPlusButton = () => {
 
 const createMinusBtn = () => {
 
-    minusBtn = document.createElement("button")
+    const minusBtn = document.createElement("button")
     minusBtn.setAttribute("type", "button")
-    minusBtn.setAttribute("class", "btn btn-danger btn-number w-10 ms-1")
+    minusBtn.setAttribute("class", "btn btn-danger btn-number ms-1")
     minusBtn.setAttribute("data-type", "minus")
     minusBtn.setAttribute("data-field", "quant[1]")
-    minus = document.createElement("span")
+    const minus = document.createElement("span")
     minus.innerHTML = "-"
     minusBtn.appendChild(minus)
 
@@ -117,7 +117,7 @@ const createDelBtn = (row) => {
     const delBtn = document.createElement('button')
     delBtn.setAttribute('type', 'submit')
     delBtn.setAttribute('class', 'btn btn-danger')
-    delBtn.innerHTML = "Remove"
+    delBtn.innerHTML = "Del"
     
     delBtn.addEventListener('click', (event) => {
 
@@ -142,10 +142,10 @@ function formSubmitHandler(event) {
     const col3 = document.createElement("div")
     const productsList = document.getElementById('products')
 
-    row.setAttribute('class', 'row mb-2')
-    col1.setAttribute('class', 'col-7 d-flex justify-content-center')
-    col2.setAttribute('class', 'col-3 d-flex justify-content-center')
-    col3.setAttribute('class', 'col-2 d-flex justify-content-center')
+    row.setAttribute('class', 'container-sm row mb-2')
+    col1.setAttribute('class', 'container-sm col-7')
+    col2.setAttribute('class', 'container-sm col-3')
+    col3.setAttribute('class', 'container-sm col-2')
     
     for (const pair of fd.entries()) {      
     
@@ -158,17 +158,17 @@ function formSubmitHandler(event) {
 
         } else {
 
-            plusBtn = createPlusButton()
-
+            const secondColContainer = document.createElement("div")
+            secondColContainer.setAttribute("class", "container-sm d-grid gap-2 d-md-flex")
             const qty = document.createElement("div")
             qty.innerHTML = pair[1]
             qty.setAttribute('class', 'list-group-item text-center w-50')
 
-            col2.appendChild(plusBtn)
-            col2.appendChild(qty)
+            secondColContainer.appendChild(createPlusButton())
+            secondColContainer.appendChild(qty)
             
-            minusBtn = createMinusBtn()
-            col2.appendChild(minusBtn)
+            secondColContainer.appendChild(createMinusBtn())
+            col2.appendChild(secondColContainer)
         }
     };
     
