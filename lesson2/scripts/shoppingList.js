@@ -143,9 +143,9 @@ function formSubmitHandler(event) {
     const productsList = document.getElementById('products')
 
     row.setAttribute('class', 'container-sm row mb-2')
-    col1.setAttribute('class', 'container-sm col-7')
-    col2.setAttribute('class', 'container-sm col-3')
-    col3.setAttribute('class', 'container-sm col-2')
+    col1.setAttribute('class', 'container-sm col-8')
+    col2.setAttribute('class', 'container-sm col-2 d-flex justify-content-center')
+    col3.setAttribute('class', 'container-sm col-2 d-flex justify-content-center')
     
     for (const pair of fd.entries()) {      
     
@@ -158,17 +158,13 @@ function formSubmitHandler(event) {
 
         } else {
 
-            const secondColContainer = document.createElement("div")
-            secondColContainer.setAttribute("class", "container-sm d-grid gap-2 d-md-flex")
             const qty = document.createElement("div")
             qty.innerHTML = pair[1]
             qty.setAttribute('class', 'list-group-item text-center w-50')
 
-            secondColContainer.appendChild(createPlusButton())
-            secondColContainer.appendChild(qty)
-            
-            secondColContainer.appendChild(createMinusBtn())
-            col2.appendChild(secondColContainer)
+            col2.appendChild(createPlusButton())
+            col2.appendChild(qty)
+            col2.appendChild(createMinusBtn())
         }
     };
     
