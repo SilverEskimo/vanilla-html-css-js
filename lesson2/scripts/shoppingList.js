@@ -143,9 +143,9 @@ function formSubmitHandler(event) {
     const productsList = document.getElementById('products')
 
     row.setAttribute('class', 'container-sm row mb-2')
-    col1.setAttribute('class', 'container-sm col-8')
-    col2.setAttribute('class', 'container-sm col-2 d-flex justify-content-center')
-    col3.setAttribute('class', 'container-sm col-2 d-flex justify-content-center')
+    col1.setAttribute('class', 'container-sm col-sm-6 col-xs-12 d-inline-flex justify-content-center my-1')
+    col2.setAttribute('class', 'container-sm col-sm-4 col-xs-6 d-inline-flex justify-content-center my-1')
+    col3.setAttribute('class', 'container-sm col-sm-2 col-xs-6 d-inline-flex justify-content-center my-1')
     
     for (const pair of fd.entries()) {      
     
