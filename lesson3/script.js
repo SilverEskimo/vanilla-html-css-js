@@ -17,8 +17,7 @@ const formSubmitHandler = async (event) => {
     row.setAttribute("class", "container-sm-2 row-2 d-flex justify-content-center my-1");
     
     timeWindow.innerHTML = valInSeconds;
-    timeWindow.setAttribute('class', 'rounded border text-center my-4');
-    timeWindow.setAttribute("style", "width: 80px")
+    timeWindow.setAttribute('class', 'text-center my-4');
     timeWindow.setAttribute("id", "time-window");
     
     try {
