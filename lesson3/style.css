@@ -3,7 +3,7 @@ body {
 }
 p, h1 {
     font-family: 'VT323', monospace;
-    font-size: x-large;
+    font-size: 2em;
     color: rgb(0, 255, 0);  
 }
 
@@ -20,10 +20,8 @@ h1 {
 }
 
 #time-window {
-    border: solid;
-    font-size: 1em;
-    border-width: 1px;
-    border-radius: 10%;
+    
+    font-size: 3em;
     border-color: rgb(0, 255, 0);
     color: rgb(0, 255, 0);
     font-family: 'VT323', monospace;
