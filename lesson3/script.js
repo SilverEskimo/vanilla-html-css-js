@@ -4,11 +4,11 @@ const formSubmitHandler = async (event) => {
     event.preventDefault();
     
     const secondsInput = document.getElementById("sec-input")
-    secondsInput.setAttribute('required', true)
     const startButton = document.getElementById("start-button")
     const row = document.createElement("div");
     const timeWindow = document.createElement("div");
     const myForm = document.getElementById("my-form");
+
     startButton.setAttribute("disabled", "disabled")
     secondsInput.setAttribute("disabled", "disabled")
 
@@ -36,7 +36,6 @@ const formSubmitHandler = async (event) => {
         localStorage.setItem("totalTime", secondsInt)
     
     }
-    
     
     const timeout = () => {
         return new Promise(resolve => setTimeout(resolve, 1000));
@@ -90,11 +89,12 @@ const checkStorage = (event) => {
             myForm.requestSubmit()
 
         } else {
+
             console.log("The time value is in the past. Clearing local storage.")
             localStorage.removeItem("timer")
             localStorage.removeItem("totalTime")
         }
-        
+
     } else {
 
         console.log("No local storage")
