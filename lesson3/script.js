@@ -87,7 +87,7 @@ const checkStorage = (event) => {
 
             secInput.value = parseInt((timeToFinish - Date.now()) / 1000)
             myForm.requestSubmit()
-
+            
         } else {
 
             console.log("The time value is in the past. Clearing local storage.")
